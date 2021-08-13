@@ -5,16 +5,19 @@
 		<title></title>
 		<script type="text/javascript">
 
+			document.addEventListener("DOMContentLoaded", function() {
+  				function createParagraph() {
+    				let para = document.createElement('p');
+    				para.textContent = 'You clicked the button!';
+    				document.body.appendChild(para);
+  				}
 
-			var myImage = document.querySelector('img');
+  				const buttons = document.querySelectorAll('button');
 
-			myImage.onclick = function() {
-    		var mySrc = myImage.getAttribute('src');
-    		if(mySrc === 'Telegram Desktop/olya.jpg') {
-      		myImage.setAttribute ('src','Telegram Desktop/olya2.jpg');
-    		} else {
-      		myImage.setAttribute ('src','Telegram Desktop/olya.jpg');
-    		}
+  				for(let i = 0; i < buttons.length ; i++) {
+    			buttons[i].addEventListener('click', createParagraph);
+  				}
+			});
 		</script>
 	</head>		
 	<body>
